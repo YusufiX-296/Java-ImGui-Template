@@ -23,9 +23,9 @@ jobs:
     - name: Download and Extract Dobby Hook Library
       run: |
         mkdir -p app/src/main/jni/includes/Dobby
-        wget https://github.com/jmpep/Dobby/archive/refs/heads/master.zip -O dobby.zip
+        wget https://github.com/flyskyige/Dobby/archive/refs/heads/master.zip -O dobby.zip || wget https://github.com/jmpep/Dobby/archive/refs/heads/main.zip -O dobby.zip
         unzip -q dobby.zip -d temp_dobby
-        cp -r temp_dobby/Dobby-master/* app/src/main/jni/includes/Dobby/
+        cp -r temp_dobby/*/ * app/src/main/jni/includes/Dobby/
         rm -rf dobby.zip temp_dobby
 
     - name: Grant execute permission for gradlew
