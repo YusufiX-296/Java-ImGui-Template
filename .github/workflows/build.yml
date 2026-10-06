@@ -20,6 +20,11 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
+    - name: Download Dobby Hook Library
+      run: |
+        mkdir -p app/src/main/jni/includes/Dobby
+        git clone https://github.com/jmpep/Dobby.git app/src/main/jni/includes/Dobby
+
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
